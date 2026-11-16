@@ -1,5 +1,5 @@
 # System Config
-### Prerequsite
+### Prerequisites
 **Ubuntu laptop**
 - Ubuntu 24.04.5
 - x86_64 architecture
@@ -308,3 +308,6 @@ source ~/.bashrc
 | Architecture  | ARM64          | x86_64        |
 | Communication | Working        | Working       |
 
+---
+
+[Next: ROS 2 fundamentals](./02-ros2-fundamentals.md)

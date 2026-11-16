@@ -13,17 +13,28 @@ Each tutorial explains:
 - How to verify and troubleshoot it
 - How it is used in real-world robotics
 
-## Learning Modules
-1. [System Config](docs/01-sys-config.md)
-2. [ROS 2 Fundamentals](docs/02-ros2-fundamentals.md)
-    - [Services](docs/services)
-    - [Actions](docs/actions)
-    - [Parameters](docs/parameters)
-3. [Topics and Services](docs/02-topics-services.md)
-4. [TF2 Transformations](docs/03-tf2.md)
-5. [URDF and Robot Description](docs/04-urdf.md)
-6. [Gazebo Simulation](docs/05-gazebo.md)
-7. [ros2_control](docs/06-ros2-control.md)
+## Learning path
+
+Follow the lessons in order. Each lesson links to the next one so you can continue
+without returning to this page.
+
+1. [System configuration](docs/01-sys-config.md)
+2. [ROS 2 fundamentals](docs/02-ros2-fundamentals.md)
+3. [Services](docs/services.md)
+4. [Actions](docs/actions.md)
+5. [Parameters](docs/parameters.md)
+6. [Launch files](docs/launch-file.md)
+7. [Introduction to TF2](docs/tf2.md)
+8. [Dynamic TF broadcaster](docs/dynamic-tf.md)
+9. [Visualizing TF2 in RViz2](docs/rviz2.md)
+10. [URDF: Create your first robot model](docs/urdf.md)
+11. [Xacro: Simplify URDF](docs/xacro.md)
+12. [Add mass, inertia, and collision to URDF](docs/mass-inertia-collision.md)
+13. [Gazebo simulation](docs/05-gazebo.md)
+14. [Odometry, TF2, and RViz2 integration](docs/odometry-integration.md)
+15. [TF2 and coordinate transformations](docs/coordinate-transformations.md)
+16. [ros2_control](docs/ros2-control.md)
+17. [LiDAR](docs/lidar.md)
 
 ## Goal
 

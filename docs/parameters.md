@@ -16,8 +16,8 @@ Instead of hardcoding these values, we can declare them as ROS 2 parameters and 
 ## 1. How parameters work
 
 [How to Use ROS 2 Parameters | Foxglove](https://images.openai.com/static-rsc-4/C1gueF8Nq_qwCwMP-Fd8WlRmiqUsoxb59Jw5cPd1i9syvM2Pc6XgtK6zH6YpgB8VsLVSSkc0OsrvsaRu8wj5Skmqg6sQ9Ha7NhPc76hrv-RPWUwiiT2D3LvFsrZ5thPq7f_eZlBLX4vZH6clEUp3V9sTAfHvnk9j6UGcFyqOORM?purpose=inline)
-![alt text](image-4.png)
-[foxglove.dev](https://foxglove.dev/blog/how-to-use-ros2-parameters?utm_source=chatgpt.com)
+![alt text](../images/image-4.png)
+[foxglove.dev](https://foxglove.dev/blog/how-to-use-ros2-parameters)
 
 For example:
 
@@ -211,7 +211,7 @@ ros2 param set /robot_controller linear_speed 0.8
 Expected:
 
 ```
-Set parameter successful
+Parameter set successfully
 ```
 
 Look at Terminal 1. You should now see:
@@ -258,3 +258,6 @@ ros2 param dump /robot_controller > robot_params.yaml
 
 This is useful when configuring different robot models or simulation environments.
 
+---
+
+[Next: Launch files](./launch-file.md)

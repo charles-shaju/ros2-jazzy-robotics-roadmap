@@ -14,17 +14,13 @@ Each tutorial explains:
 - How it is used in real-world robotics
 
 ## Learning Modules
-
-1. ROS 2 Fundamentals
-2. Topics, Services, and Actions
-3. TF2 and Coordinate Frames
-4. URDF and Robot Description
-5. Gazebo Simulation
-6. ros2_control and Differential Drive
-7. Odometry and Teleoperation
-8. LiDAR and Obstacle Detection
-9. SLAM and Localization
-10. Autonomous Navigation with Nav2
+1. [System Config](docs/01-sys-config.md)
+2. [ROS 2 Fundamentals](docs/01-ros2-fundamentals.md)
+3. [Topics and Services](docs/02-topics-services.md)
+4. [TF2 Transformations](docs/03-tf2.md)
+5. [URDF and Robot Description](docs/04-urdf.md)
+6. [Gazebo Simulation](docs/05-gazebo.md)
+7. [ros2_control](docs/06-ros2-control.md)
 
 ## Goal
 

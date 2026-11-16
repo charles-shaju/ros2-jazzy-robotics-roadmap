@@ -15,7 +15,10 @@ Each tutorial explains:
 
 ## Learning Modules
 1. [System Config](docs/01-sys-config.md)
-2. [ROS 2 Fundamentals](docs/01-ros2-fundamentals.md)
+2. [ROS 2 Fundamentals](docs/02-ros2-fundamentals.md)
+    - [Services](docs/services)
+    - [Actions](docs/actions)
+    - [Parameters](docs/parameters)
 3. [Topics and Services](docs/02-topics-services.md)
 4. [TF2 Transformations](docs/03-tf2.md)
 5. [URDF and Robot Description](docs/04-urdf.md)

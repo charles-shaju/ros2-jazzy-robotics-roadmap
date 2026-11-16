@@ -1,9 +1,9 @@
-# System Config
+# System Configuration
 ### Prerequisites
 **Ubuntu laptop**
 - Ubuntu 24.04.5
 - x86_64 architecture
-- 16 GB RAM(Recomended)
+- 16 GB RAM (recommended)
 - ROS 2 Jazzy
 
 **Raspberry Pi 4**
@@ -37,12 +37,20 @@ Run:
 uname -m
 ```
 
-Expected:
+On the Ubuntu laptop, expected:
 
 ```bash
+x86_64
+```
+This means the laptop is running 64-bit x86 Linux.
+
+On the Raspberry Pi, the expected output is:
+
+```text
 aarch64
 ```
-This means you're running 64-bit ARM Linux.
+
+This means the Pi is running 64-bit ARM Linux.
 
 ### 1.3 Check Raspberry Pi hardware
 
@@ -170,7 +178,7 @@ source install/setup.bash
 
 Your directory structure will look like:
 
-```
+```text
 ros2_ws/
 │
 ├── src/
@@ -219,7 +227,7 @@ ros2 topic list
 
 Expected:
 
-```
+```text
 /chatter
 /parameter_events
 /rosout

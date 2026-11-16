@@ -22,7 +22,7 @@ It provides a standardized way to control motors, read sensors, and manage robot
 
 For our robot, the essential configuration is:
 
-```
+```text
 /ros2_ws/
 ├── config/
 │   └── controllers.yaml
@@ -95,10 +95,10 @@ diff_drive_controller:
     enable_odom_tf: true
     open_loop: false
     position_feedback: true
-    use_stamped_vel: false
+    use_stamped_vel: true
 ```
 
-The wheel separation and radius must match the robot's physical dimensions. The values shown are our example configuration.
+The wheel separation and radius must match the robot's physical dimensions. The values shown are our example configuration. With `use_stamped_vel: true`, the controller expects `geometry_msgs/msg/TwistStamped` on `/diff_drive_controller/cmd_vel`.
 
 ## **4. Standard startup procedure**
 
@@ -157,7 +157,7 @@ Both should be `active`.
 
 Your working controller subscribes to `/diff_drive_controller/cmd_vel`. Confirm its message type before publishing:
 
-```
+```bash
 ros2 topic info /diff_drive_controller/cmd_vel -v
 ```
 
@@ -215,7 +215,7 @@ ros2 control switch_controllers --deactivate diff_drive_controller
 
 **Error 1: Malformed parameter arguments**
 
-```
+```text
 Couldn't parse params file: '--params-file -p'
 ```
 
@@ -223,7 +223,7 @@ The controller could not initialize because the parameter-file argument was malf
 
 **Error 2: Activation timeout**
 
-```
+```text
 Switch controller timed out after 5 seconds!
 ```
 
@@ -235,7 +235,7 @@ The controller subscribed to `/diff_drive_controller/cmd_vel`, not the initially
 
 We identified the correct topic using:
 
-```
+```bash
 ros2 node info /diff_drive_controller
 ```
 
@@ -330,13 +330,13 @@ The warning is related to how `ros2_control` initializes the robot's hardware in
 
 Its full name is:
 
-```
+```text
 geometry_msgs/msg/Twist
 ```
 
 It contains two vectors:
 
-```
+```text
 Twist
  ├── linear
  │    ├── x
@@ -449,20 +449,20 @@ The odometry controller can publish the transform `odom → base_link`, dependin
 
 **Check controllers:**
 
-```
+```bash
 ros2 control list_controllers
 ```
 
 **Check odometry:**
 
-```
+```bash
 ros2 topic echo /diff_drive_controller/odom \
 --field pose.pose.position
 ```
 
 **Move forward at 0.2 m/s:**
 
-```
+```bash
 ros2 topic pub -r 10 /diff_drive_controller/cmd_vel \
 geometry_msgs/msg/TwistStamped \
 "{header: {frame_id: base_link}, twist: {linear: {x: 0.2}, angular: {z: 0.0}}}"
@@ -470,19 +470,19 @@ geometry_msgs/msg/TwistStamped \
 
 **Check wheel feedback:**
 
-```
+```bash
 ros2 topic echo /joint_states --once
 ```
 
 **Check simulation time:**
 
-```
+```bash
 ros2 topic echo /clock
 ```
 
 **Check odometry TF:**
 
-```
+```bash
 ros2 run tf2_ros tf2_echo odom base_link
 ```
 
@@ -516,7 +516,7 @@ A typical industry architecture is:
 
 ![Lesson illustration illustration](../images/image-34.png)
 
-Common industry tools include `ros2_control`, `diff_drive_controller`, `robot_localization`, RViz22, SLAM Toolbox, and Nav2.
+Common industry tools include `ros2_control`, `diff_drive_controller`, `robot_localization`, RViz2, SLAM Toolbox, and Nav2.
 
 ---
 

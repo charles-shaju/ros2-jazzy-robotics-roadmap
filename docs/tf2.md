@@ -75,7 +75,7 @@ A fixed relationship between two frames.
 
 Example: A LiDAR sensor is permanently mounted 20 cm above the robot body.
 
-```
+```text
 base_link → laser_link
 ```
 
@@ -85,7 +85,7 @@ A relationship that changes over time.
 
 Example: The robot moves through a room.
 
-```
+```text
 world → base_link
 ```
 
@@ -97,14 +97,14 @@ Use your Ubuntu laptop.
 
 ### Step 1: Create the Python file
 
-```
+```bash
 cd ~/ros2_ws/src/robot_basics/robot_basics
 touch static_tf_broadcaster.py
 ```
 
 Open it:
 
-```
+```bash
 nano static_tf_broadcaster.py
 ```
 
@@ -195,7 +195,7 @@ The quaternion values represent no rotation.
 
 Open:
 
-```
+```bash
 nano ~/ros2_ws/src/robot_basics/setup.py
 ```
 
@@ -209,7 +209,7 @@ Keep your other entries.
 
 ### Step 5: Build the package
 
-```
+```bash
 cd ~/ros2_ws
 colcon build --packages-select robot_basics
 source install/setup.bash
@@ -217,13 +217,13 @@ source install/setup.bash
 
 ### Step 6: Run the broadcaster
 
-```
+```bash
 ros2 run robot_basics static_tf_broadcaster
 ```
 
 Expected output:
 
-```
+```text
 Static TF published!
 ```
 
@@ -233,32 +233,32 @@ Keep this terminal running.
 
 Open a second terminal on your laptop.
 
-```
+```bash
 source /opt/ros/jazzy/setup.bash
 source ~/ros2_ws/install/setup.bash
 ```
 
 Check the TF topics:
 
-```
+```bash
 ros2 topic list | grep tf
 ```
 
 You should see:
 
-```
+```text
 /tf
 /tf_static
 ```
 
 Check the transformation:
 
-```
+```bash
 ros2 run tf2_ros tf2_echo base_link laser_link
 ```
 
 You should see translation values approximately like:
-```
+```text
 Translation:
   x: 0.2
   y: 0.0

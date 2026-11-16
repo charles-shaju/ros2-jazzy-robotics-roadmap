@@ -43,7 +43,7 @@ A topic is a named communication channel through which nodes exchange messages.
 
 For example:
 
-```
+```text
 /sensor/temperature
 /cmd_vel
 /scan
@@ -147,7 +147,7 @@ Let's understand the command:
 
 Your package structure will look like:
 
-```
+```text
 ros2_ws/
 └── src/
     └── robot_basics/
@@ -164,7 +164,7 @@ A publisher sends information to a topic.
 
 Our program will publish the message:
 
-```
+```text
 Robot is ready!
 Robot is moving!
 Robot is turning!
@@ -287,7 +287,7 @@ There are three arguments:
 
 The full topic name will be:
 
-```
+```text
 /robot_status
 ```
 
@@ -323,7 +323,7 @@ ROS 2 needs to know how to execute our Python program using the `ros2 run` comma
 
 Go to the package directory:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_basics
 nano setup.py
 ```
@@ -353,31 +353,31 @@ talker = robot_basics.talker:main
 
 Go to your workspace:
 
-```
+```bash
 cd ~/ros2_ws
 ```
 
 Build:
 
-```
+```bash
 colcon build
 ```
 
 Source the workspace:
 
-```
+```bash
 source install/setup.bash
 ```
 
 Run your publisher:
 
-```
+```bash
 ros2 run robot_basics talker
 ```
 
 Expected output:
 
-```
+```text
 [INFO] [robot_publisher]: Publishing: "Robot is ready!"
 [INFO] [robot_publisher]: Publishing: "Robot is ready!"
 [INFO] [robot_publisher]: Publishing: "Robot is ready!"
@@ -394,7 +394,7 @@ Open a second terminal on your laptop.
 
 Source ROS 2 and your workspace:
 
-```
+```bash
 source /opt/ros/jazzy/setup.bash
 
 source ~/ros2_ws/install/setup.bash
@@ -402,7 +402,7 @@ source ~/ros2_ws/install/setup.bash
 
 Create the file:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_basics/robot_basics
 
 nano listener.py
@@ -486,7 +486,7 @@ msg.data
 
 Open `setup.py` again:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_basics
 
 nano setup.py
@@ -508,7 +508,7 @@ colcon build --packages-select robot_basics
 
 Source:
 
-```
+```bash
 source install/setup.bash
 ```
 
@@ -516,19 +516,19 @@ source install/setup.bash
 
 Terminal 1 – Publisher
 
-```
+```bash
 ros2 run robot_basics talker
 ```
 
 Terminal 2 – Subscriber
 
-```
+```bash
 ros2 run robot_basics listener
 ```
 
 Expected subscriber output
 
-```
+```text
 Received: "Robot is ready!"
 Received: "Robot is ready!"
 Received: "Robot is moving!"
@@ -545,37 +545,37 @@ Keep both programs running and open a third terminal.
 
 ### A. List running nodes
 
-```
+```bash
 ros2 node list
 ```
 
 Expected:
 
-```
+```text
 /robot_listener
 /robot_publisher
 ```
 
 ### B. List available topics
 
-```
+```bash
 ros2 topic list
 ```
 
 Expected:
 
-```
+```text
 /robot_status
 ```
 
 ### C. Inspect the topic
-```
+```bash
 ros2 topic info /robot_status
 ```
 
 Expected:
 
-```
+```text
 Type: std_msgs/msg/String
 Publisher count: 1
 Subscription count: 1
@@ -583,7 +583,7 @@ Subscription count: 1
 
 ### D. Read topic messages directly
 
-```
+```bash
 ros2 topic echo /robot_status
 ```
 
@@ -591,25 +591,25 @@ This displays messages without needing our subscriber program.
 
 ### E. Check publishing frequency
 
-```
+```bash
 ros2 topic hz /robot_status
 ```
 
 Expected:
 
-```
+```text
 average rate: 1.000
 ```
 
 ### F. Understand the message structure
 
-```
+```bash
 ros2 interface show std_msgs/msg/String
 ```
 
 Expected:
 
-```
+```text
 string data
 ```
 
@@ -634,7 +634,7 @@ ros2 topic echo /robot_status
 
 Your Raspberry Pi should receive:
 
-```
+```text
 data: Robot is ready!
 ---
 data: Robot is moving!
@@ -656,7 +656,7 @@ ros2 topic list
 
 Expected output may include:
 
-```
+```text
 /parameter_events
 /robot_status
 /rosout
@@ -673,13 +673,13 @@ Expected output may include:
 
 This command displays messages being published to a topic.
 
-```
+```bash
 ros2 topic echo /robot_status
 ```
 
 Expected output:
 
-```
+```text
 data: Robot is ready!
 ---
 data: Robot is ready!
@@ -696,13 +696,13 @@ You can run this command on your Raspberry Pi to observe messages sent by the la
 
 This command displays information about a particular topic.
 
-```
+```bash
 ros2 topic info /robot_status
 ```
 
 Expected output:
 
-```
+```text
 Type: std_msgs/msg/String
 Publisher count: 1
 Subscription count: 1
@@ -721,13 +721,13 @@ This tells us:
 
 This command measures how frequently messages are published.
 
-```
+```bash
 ros2 topic hz /robot_status
 ```
 
 Expected output:
 
-```
+```text
 average rate: 1.000
 ```
 
@@ -741,7 +741,7 @@ First, stop the existing talker by pressing `Ctrl + C` in its terminal.
 
 On your laptop, run:
 
-```
+```bash
 ros2 topic pub /robot_status std_msgs/msg/String "{data: 'Manual test message'}"
 ```
 
@@ -749,7 +749,7 @@ This publishes a message to `/robot_status`.
 
 On your Raspberry Pi, the listener should display:
 
-```
+```text
 Received: "Manual test message"
 Received: "Manual test message"
 ```
@@ -758,7 +758,7 @@ By default, `ros2 topic pub` continuously publishes messages.
 
 To publish just once, use:
 
-```
+```bash
 ros2 topic pub --once /robot_status std_msgs/msg/String "{data: 'Hello Robot'}"
 ```
 

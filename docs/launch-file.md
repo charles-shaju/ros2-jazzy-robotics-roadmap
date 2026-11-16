@@ -19,19 +19,19 @@ Instead of two terminal commands, we'll use just one.
 
 We'll continue using your existing `robot_basics` package on your Ubuntu laptop.
 
-```
+```bash
 cd ~/ros2_ws/src/robot_basics
 ```
 
 Create a directory named `launch`:
 
-```
+```bash
 mkdir launch
 ```
 
 Your package structure should now look like this:
 
-```
+```text
 robot_basics/
 ├── package.xml
 ├── setup.py
@@ -50,7 +50,7 @@ robot_basics/
 
 Run:
 
-```
+```bash
 nano launch/talker_listener.launch.py
 ```
 
@@ -132,7 +132,7 @@ This is an important step. ROS 2 needs to know where your launch files are locat
 
 Open:
 
-```
+```bash
 nano setup.py
 ```
 
@@ -160,7 +160,7 @@ Keep your existing `entry_points` section unchanged.
 
 Open:
 
-```
+```bash
 nano package.xml
 ```
 
@@ -177,19 +177,19 @@ Save the file.
 
 Go to your workspace:
 
-```
+```bash
 cd ~/ros2_ws
 ```
 
 Build:
 
-```
+```bash
 colcon build --packages-select robot_basics
 ```
 
 Source the workspace:
 
-```
+```bash
 source install/setup.bash
 ```
 
@@ -199,7 +199,7 @@ Now comes the interesting part!
 
 Instead of running two separate commands, execute:
 
-```
+```bash
 ros2 launch robot_basics talker_listener.launch.py
 ```
 
@@ -207,7 +207,7 @@ Expected result
 
 You should see both publisher and subscriber logs in the same terminal:
 
-```
+```text
 [robot_publisher]: Publishing: "Robot is ready!"
 [robot_listener]: Received: "Robot is ready!"
 

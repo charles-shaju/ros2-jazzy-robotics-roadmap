@@ -4,13 +4,13 @@
 
 Initially, we launched:
 
-```
+```bash
 gz sim -r empty.sdf
 ```
 
 Our robot spawned successfully, but:
 
-```
+```bash
 gz topic -l
 ```
 
@@ -18,7 +18,7 @@ did not display `/scan`.
 
 We verified that the URDF contained:
 
-```
+```text
 lidar_link
 lidar_joint
 lidar_sensor
@@ -37,13 +37,13 @@ The Sensors system is responsible for updating simulated sensors such as LiDAR a
 
 Our world file:
 
-```
+```text
 /ros2_ws/worlds/lidar_world.sdf
 ```
 
 Create or edit it using:
 
-```
+```bash
 mkdir -p /ros2_ws/worlds
 nano /ros2_ws/worlds/lidar_world.sdf
 ```
@@ -101,7 +101,7 @@ Our first custom world attempted to load:
 
 Gazebo reported:
 
-```
+```text
 Error Code 14:
 Unable to find uri[model://ground_plane]
 

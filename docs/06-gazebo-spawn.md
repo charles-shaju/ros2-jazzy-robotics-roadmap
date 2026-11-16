@@ -73,31 +73,31 @@ Here, the robot chassis is a box measuring 40 × 30 × 10 cm with a mass of 5 kg
 
 Open a terminal on your laptop:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_description
 ```
 
 Check the package contents:
 
-```
+```bash
 ls
 ```
 
 Find your URDF files:
 
-```
+```bash
 find . -type f \( -name "*.urdf" -o -name "*.xacro" \)
 ```
 
 You might see something like:
 
-```
+```text
 ./urdf/robot.urdf
 ```
 
 or:
 
-```
+```text
 ./urdf/robot.urdf.xacro
 ```
 
@@ -107,20 +107,20 @@ We need the actual file name before proceeding.
 
 First, make sure Gazebo is running in another terminal:
 
-```
+```bash
 gz sim empty.sdf
 ```
 
 In a second terminal, source ROS 2:
 
-```
+```bash
 source /opt/ros/jazzy/setup.bash
 source ~/ros2_ws/install/setup.bash
 ```
 
 If your model is a plain URDF file, use:
 
-```
+```bash
 ros2 run ros_gz_sim create \
   -world empty \
   -file ~/ros2_ws/src/robot_description/urdf/robot.urdf \

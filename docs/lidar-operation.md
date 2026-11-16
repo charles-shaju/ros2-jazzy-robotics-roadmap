@@ -4,7 +4,7 @@ These are the commands to start your working simulation from a fresh terminal se
 
 ## **Terminal 1 — Start Gazebo**
 
-```
+```bash
 source /opt/ros/jazzy/setup.bash
 source /ros2_ws/install/setup.bash
 
@@ -15,7 +15,7 @@ The `-r` flag starts the simulation running rather than paused.
 
 ## **Terminal 2 — Start robot_state_publisher**
 
-```
+```bash
 source /opt/ros/jazzy/setup.bash
 source /ros2_ws/install/setup.bash
 
@@ -29,7 +29,7 @@ ros2 run robot_state_publisher robot_state_publisher \
 
 ## **Terminal 3 — Spawn the robot**
 
-```
+```bash
 source /opt/ros/jazzy/setup.bash
 source /ros2_ws/install/setup.bash
 
@@ -46,7 +46,7 @@ The `-z 0.2` argument specifies the initial spawn height, which may need adjustm
 
 ## **Terminal 4 — Activate controllers**
 
-```
+```bash
 source /opt/ros/jazzy/setup.bash
 source /ros2_ws/install/setup.bash
 
@@ -57,7 +57,7 @@ ros2 run controller_manager spawner \
 
 Then:
 
-```
+```bash
 ros2 run controller_manager spawner \
   diff_drive_controller \
   --controller-manager /controller_manager
@@ -65,13 +65,13 @@ ros2 run controller_manager spawner \
 
 Verify:
 
-```
+```bash
 ros2 control list_controllers
 ```
 
 Expected:
 
-```
+```text
 joint_state_broadcaster ... active
 diff_drive_controller  ... active
 ```
@@ -91,16 +91,16 @@ This forwards the LiDAR measurements and simulation clock from Gazebo to ROS 2.
 
 Keep this terminal running.
 
-## **Terminal 6 — Open RViz22**
+## **Terminal 6 — Open RViz2**
 
-```
+```bash
 source /opt/ros/jazzy/setup.bash
 source /ros2_ws/install/setup.bash
 
 rviz2 --ros-args -p use_sim_time:=true
 ```
 
-Configure RViz22:
+Configure RViz2:
 
 - Fixed Frame: `lidar_link` initially, then `odom`.
     
@@ -113,7 +113,7 @@ Configure RViz22:
 
 ## **Terminal 7 — Keyboard teleoperation**
 
-```
+```bash
 source /opt/ros/jazzy/setup.bash
 source /ros2_ws/install/setup.bash
 
@@ -133,13 +133,13 @@ This ROS 2 message represents range measurements taken at different angles in a 
 
 Inspect its definition:
 
-```
+```bash
 ros2 interface show sensor_msgs/msg/LaserScan
 ```
 
 Read a scan:
 
-```
+```bash
 ros2 topic echo /scan --once
 ```
 
@@ -210,11 +210,11 @@ This is one of the basic calculations used in robotics perception.
 
 The LiDAR measures distances relative to its own coordinate frame.
 
-However, RViz22 may need to display those measurements relative to the robot or the world.
+However, RViz2 may need to display those measurements relative to the robot or the world.
 
 Our relevant TF chain is:
 
-```
+```text
 odom
   |
   └── base_link
@@ -228,13 +228,13 @@ The transform from `base_link` to `lidar_link` is fixed because the sensor is ri
 
 Check:
 
-```
+```bash
 ros2 run tf2_ros tf2_echo base_link lidar_link
 ```
 
 The expected translation is approximately:
 
-```
+```text
 Translation: [0.0, 0.0, 0.2]
 ```
 
@@ -313,9 +313,9 @@ ros2 topic echo /clock --once
 7. Is ros_gz_bridge running?
 8. Does ROS 2 receive /scan?
 9. Are the TF frames connected?
-10. Does RViz22 display the scan?
+10. Does RViz2 display the scan?
 
-**Industry practice:** Debug from the data source toward the consumer. Verify Gazebo first, then the bridge, then ROS 2, then TF and RViz22. This helps isolate failures efficiently.
+**Industry practice:** Debug from the data source toward the consumer. Verify Gazebo first, then the bridge, then ROS 2, then TF and RViz2. This helps isolate failures efficiently.
 
 
 
@@ -348,7 +348,7 @@ Range sensing helps detect nearby structures and obstacles during navigation.
 |`ros_gz_bridge`|Gazebo–ROS 2 communication|
 |`robot_state_publisher`|Robot coordinate transforms|
 |`tf2`|Transform management|
-|RViz22|Visualization and debugging|
+|RViz2|Visualization and debugging|
 |`slam_toolbox`|2D SLAM|
 |Nav2|Autonomous navigation|
 
@@ -368,7 +368,7 @@ For real industrial deployment, sensor calibration, timestamp synchronization, r
     
 6. **TF connects sensor measurements to the robot's coordinate system.**
     
-7. **RViz22 visualizes measurements** but does not itself generate or process LiDAR scans.
+7. **RViz2 visualizes measurements** but does not itself generate or process LiDAR scans.
     
 8. **Odometry and LiDAR complement each other:** odometry estimates robot motion, while LiDAR observes surrounding geometry.
     

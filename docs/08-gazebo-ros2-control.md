@@ -8,7 +8,7 @@ Your robot now moves in Gazebo using `gz topic`. Next, we'll control it using **
 
 Previously, we sent commands directly to Gazebo:
 
-```
+```bash
 gz topic → Gazebo DiffDrive → Robot
 ```
 
@@ -30,7 +30,7 @@ sudo apt install ros-jazzy-teleop-twist-keyboard
 
 **Terminal 1 — Gazebo**
 
-```
+```bash
 gz sim empty.sdf
 ```
 
@@ -76,12 +76,12 @@ The bridge must remain running.
 source /opt/ros/jazzy/setup.bash
 
 ros2 run teleop_twist_keyboard teleop_twist_keyboard \
-  --ros-args -p stamped:=false
+  --ros-args -p stamped:=true
 ```
 
 You'll see keyboard controls similar to:
 
-```
+```text
 Moving around:
    u    i    o
    j    k    l
@@ -110,31 +110,31 @@ Keep the teleoperation terminal focused while pressing keys.
 
 Open a fourth terminal:
 
-```
+```bash
 ros2 topic list
 ```
 
 You should find:
 
-```
+```text
 /cmd_vel
 ```
 
 Inspect its message type:
 
-```
+```bash
 ros2 topic info /cmd_vel
 ```
 
 Expected type:
 
-```
+```text
 geometry_msgs/msg/Twist
 ```
 
 To inspect messages:
 
-```
+```bash
 ros2 topic echo /cmd_vel
 ```
 
@@ -142,4 +142,4 @@ Press `i`, `j` or `l` in the teleoperation terminal and watch the values change.
 
 ---
 
-[Next: Odometry, TF2, and RViz22 integration](./odometry-integration.md)
+[Next: Odometry, TF2, and RViz2 integration](./odometry-integration.md)

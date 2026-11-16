@@ -39,7 +39,7 @@ Important: Xacro is not a replacement for URDF. It generates URDF from a more co
 
 On your Ubuntu laptop:
 
-```
+```bash
 sudo apt update
 sudo apt install ros-jazzy-xacro
 ```
@@ -48,13 +48,13 @@ sudo apt install ros-jazzy-xacro
 
 Go to your robot description package:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_description/urdf
 ```
 
 Create:
 
-```
+```bash
 nano my_robot.urdf.xacro
 ```
 
@@ -197,7 +197,7 @@ Before using it in ROS 2, let's convert the Xacro file into a normal URDF file.
 
 Run:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_description/urdf
 
 ros2 run xacro xacro my_robot.urdf.xacro -o my_robot_generated.urdf
@@ -205,13 +205,13 @@ ros2 run xacro xacro my_robot.urdf.xacro -o my_robot_generated.urdf
 
 This generates:
 
-```
+```text
 my_robot_generated.urdf
 ```
 
 Open it:
 
-```
+```bash
 nano my_robot_generated.urdf
 ```
 
@@ -223,36 +223,36 @@ The Xacro properties and macros have been expanded into actual links and joints.
 
 Run:
 
-```
+```text
 check_urdf my_robot_generated.urdf
 ```
 
 If the command is missing:
 
-```
+```bash
 sudo apt install liburdfdom-tools
 ```
 
 Expected output:
 
-```
+```text
 robot name is: my_robot
 ---------- Successfully Parsed XML ---------------
 root Link: base_link has 2 child(ren)
 ```
 
 ---
-#  Load Xacro directly into RViz22
+#  Load Xacro directly into RViz2
 
 Previously, our launch file loaded:
 
-```
+```text
 my_robot.urdf
 ```
 
 Now we'll make it load:
 
-```
+```text
 my_robot.urdf.xacro
 ```
 
@@ -262,7 +262,7 @@ ROS 2 will process the Xacro file automatically when launching.
 
 Open your existing launch file:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_description/launch
 
 nano display_robot.launch.py
@@ -343,7 +343,7 @@ The resulting URDF is passed to `robot_state_publisher`.
 
 Open:
 
-```
+```bash
 nano ~/ros2_ws/src/robot_description/package.xml
 ```
 
@@ -364,7 +364,7 @@ You should also have:
 
 ## 4. Build the package
 
-```
+```bash
 cd ~/ros2_ws
 
 colcon build --packages-select robot_description
@@ -374,17 +374,17 @@ source install/setup.bash
 
 ## 5. Launch your Xacro robot
 
-```
+```bash
 ros2 launch robot_description display_robot.launch.py
 ```
 
 Open another terminal:
 
-```
+```text
 rviz2
 ```
 
-In RViz22:
+In RViz2:
 
 1. Set Fixed Frame to `base_link`.
     

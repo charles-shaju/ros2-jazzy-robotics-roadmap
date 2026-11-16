@@ -46,7 +46,7 @@ Examples:
 
 Our robot will have this structure:
 
-```
+```bash
              base_link
               /     \
              /       \
@@ -71,7 +71,7 @@ This creates a new package for storing your robot model.
 
 Create the required folders:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_description
 
 mkdir urdf launch
@@ -79,7 +79,7 @@ mkdir urdf launch
 
 Your folder structure will look like:
 
-```
+```text
 robot_description/
 ├── CMakeLists.txt
 ├── package.xml
@@ -91,7 +91,7 @@ robot_description/
 
 Create:
 
-```
+```bash
 nano urdf/my_robot.urdf
 ```
 
@@ -259,13 +259,13 @@ Defines the axis around which the wheel rotates.
 
 Open:
 
-```
+```bash
 nano CMakeLists.txt
 ```
 
 Find the existing line:
 
-```
+```text
 ament_package()
 ```
 
@@ -285,7 +285,7 @@ find_package(joint_state_publisher_gui REQUIRED)
 ```
 Now open:
 
-```
+```bash
 nano package.xml
 ```
 
@@ -304,7 +304,7 @@ Instead of manually starting multiple ROS 2 nodes, we can start them together us
 
 Create:
 
-```
+```bash
 nano launch/display_robot.launch.py
 ```
 
@@ -362,7 +362,7 @@ The launch file starts two important nodes:
 
 ## 7. Build the package
 
-```
+```bash
 cd ~/ros2_ws
 
 colcon build --packages-select robot_description
@@ -372,7 +372,7 @@ source install/setup.bash
 
 If you encounter missing package errors, install:
 
-```
+```bash
 sudo apt install ros-jazzy-robot-state-publisher \
 ros-jazzy-joint-state-publisher-gui \
 ros-jazzy-rviz2
@@ -382,7 +382,7 @@ ros-jazzy-rviz2
 
 Run:
 
-```
+```bash
 ros2 launch robot_description display_robot.launch.py
 ```
 
@@ -394,11 +394,11 @@ purpose=inline)
 
 Open another terminal and run:
 
-```
+```text
 rviz2
 ```
 
-In RViz22:
+In RViz2:
 
 1. Set Fixed Frame to `base_link`.
     
@@ -416,7 +416,7 @@ Also check:
 
 - Global Options → Fixed Frame = `base_link`
     
-- RobotModel → Description Topic = `/robot_description` (if your RViz22 version shows this setting).
+- RobotModel → Description Topic = `/robot_description` (if your RViz2 version shows this setting).
 
 You should see your blue robot body and two black wheels.
 
@@ -425,25 +425,25 @@ You can move the wheel sliders in the joint control window and observe the robot
 
 ## 9. Important ROS 2 commands
 
-```
+```bash
 ros2 node list
 ```
 
 Lists the running ROS 2 nodes.
 
-```
+```bash
 ros2 topic list
 ```
 
 Lists available topics.
 
-```
+```bash
 ros2 topic echo /joint_states
 ```
 
 Displays wheel joint positions and velocities.
 
-```
+```bash
 ros2 run tf2_tools view_frames
 ```
 

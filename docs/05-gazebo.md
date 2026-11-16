@@ -66,19 +66,19 @@ Open a terminal on your laptop.
 
 **Step 1 — Check ROS 2**
 
-```
+```bash
 echo $ROS_DISTRO
 ```
 
 Expected output:
 
-```
+```text
 jazzy
 ```
 
 **Step 2 — Install Gazebo integration**
 
-```
+```bash
 sudo apt update
 
 sudo apt install ros-jazzy-ros-gz
@@ -88,7 +88,7 @@ This installs the ROS 2 integration packages for Gazebo, including tools for lau
 
 **Step 3 — Check Gazebo**
 
-```
+```bash
 gz sim --version
 ```
 
@@ -96,7 +96,7 @@ You should see Gazebo Sim version information.
 
 **Step 4 — Launch an empty world**
 
-```
+```bash
 gz sim empty.sdf
 ```
 
@@ -118,7 +118,7 @@ For example, ROS 2 can send velocity commands to a simulated robot, while Gazebo
 
 Run these commands on your laptop:
 
-```
+```bash
 gz sim --version
 gz sim empty.sdf
 ```

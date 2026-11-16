@@ -179,7 +179,7 @@ This sends the result back to the client.
 
 Open `setup.py`:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_services
 nano setup.py
 ```
@@ -212,7 +212,7 @@ ros2 run robot_services motor_server
 
 Expected output:
 
-```
+```text
 [INFO] [motor_server]: Motor service is ready!
 ```
 
@@ -224,44 +224,44 @@ Open another terminal on your laptop.
 
 Source the workspace:
 
-```
+```bash
 source ~/ros2_ws/install/setup.bash
 ```
 
 Check available services:
 
-```
+```bash
 ros2 service list
 ```
 
 You should find:
 
-```
+```text
 /motor_control
 ```
 
 Turn the motor ON:
 
-```
+```bash
 ros2 service call /motor_control std_srvs/srv/SetBool "{data: true}"
 ```
 
 Expected response:
 
-```
+```text
 success: true
 message: Motor turned ON
 ```
 
 Turn the motor OFF:
 
-```
+```bash
 ros2 service call /motor_control std_srvs/srv/SetBool "{data: false}"
 ```
 
 Expected response:
 
-```
+```text
 success: true
 message: Motor turned OFF
 ```
@@ -291,7 +291,7 @@ Our communication will look like this:
 
 On your Ubuntu laptop:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_services/robot_services
 nano motor_client.py
 ```
@@ -402,7 +402,7 @@ Waits until the response is received.
 
 Open:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_services
 nano setup.py
 ```

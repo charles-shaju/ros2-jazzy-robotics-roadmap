@@ -57,7 +57,7 @@ It calculates a Fibonacci sequence and sends feedback while calculating.
 
 For example:
 
-```
+```text
 0, 1, 1, 2, 3, 5, 8
 ```
 
@@ -67,7 +67,7 @@ This is useful for understanding how actions work before implementing robot move
 
 We'll work on your Ubuntu laptop.
 
-```
+```python
 cd ~/ros2_ws/src
 
 ros2 pkg create robot_actions \
@@ -77,7 +77,7 @@ ros2 pkg create robot_actions \
 
 If ROS 2 cannot find `example_interfaces`, install it:
 
-```
+```bash
 sudo apt install ros-jazzy-example-interfaces
 ```
 
@@ -85,7 +85,7 @@ sudo apt install ros-jazzy-example-interfaces
 
 Create the file:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_actions/robot_actions
 
 nano fibonacci_server.py
@@ -208,20 +208,20 @@ This sends the final Fibonacci sequence to the client.
 
 Open:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_actions
 nano setup.py
 ```
 
 Set the `entry_points` section to:
 
-```
+```text
 entry_points={    'console_scripts': [        'fibonacci_server = robot_actions.fibonacci_server:main',    ],},
 ```
 
 ## 6. Build the package
 
-```
+```bash
 cd ~/ros2_ws
 
 colcon build --packages-select robot_actions
@@ -233,13 +233,13 @@ source install/setup.bash
 
 In Terminal 1:
 
-```
+```bash
 ros2 run robot_actions fibonacci_server
 ```
 
 Expected output:
 
-```
+```text
 Fibonacci action server ready!
 ```
 
@@ -249,7 +249,7 @@ Keep it running.
 
 Open another terminal and create:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_actions/robot_actions
 
 nano fibonacci_client.py
@@ -382,14 +382,14 @@ Requests the final result after the action completes.
 
 Open:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_actions
 nano setup.py
 ```
 
 Update `entry_points`:
 
-```
+```text
 entry_points={    'console_scripts': [        'fibonacci_server = robot_actions.fibonacci_server:main',        'fibonacci_client = robot_actions.fibonacci_client:main',    ],},
 ```
 
@@ -397,7 +397,7 @@ entry_points={    'console_scripts': [        'fibonacci_server = robot_actions.
 
 Build again:
 
-```
+```bash
 cd ~/ros2_ws
 
 colcon build --packages-select robot_actions
@@ -409,7 +409,7 @@ Terminal 1
 
 Start server
 
-```
+```bash
 source ~/ros2_ws/install/setup.bash
 ros2 run robot_actions fibonacci_server
 ```
@@ -418,14 +418,14 @@ Terminal 2
 
 Start client
 
-```
+```bash
 source ~/ros2_ws/install/setup.bash
 ros2 run robot_actions fibonacci_client
 ```
 
 Expected client output will look similar to:
 
-```
+```text
 Sending goal...
 Goal accepted!
 Feedback: [0, 1, 1]
@@ -440,19 +440,19 @@ Final result: [0, 1, 1, 2, 3, 5, 8]
 
 While the server is running, try:
 
-```
+```bash
 ros2 action list
 ```
 
 Lists available actions.
 
-```
+```bash
 ros2 action info /fibonacci
 ```
 
 Displays action server and client information.
 
-```
+```bash
 ros2 interface show example_interfaces/action/Fibonacci
 ```
 
@@ -460,7 +460,7 @@ Displays the action definition, including goal, result and feedback.
 
 You can also send a goal directly from the terminal:
 
-```
+```bash
 ros2 action send_goal /fibonacci example_interfaces/action/Fibonacci "{order: 7}" --feedback
 ```
 

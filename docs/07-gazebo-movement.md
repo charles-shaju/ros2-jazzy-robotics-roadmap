@@ -36,7 +36,7 @@ The message type is `geometry_msgs/msg/Twist`, containing:
 
 Open your robot's URDF file.
 
-```
+```bash
 nano ~/ros2_ws/src/robot_description/urdf/robot.urdf
 ```
 

@@ -1,6 +1,6 @@
 # Adding Mass, Inertia and Collision to URDF
 
-Until now, our robot has only had a visual appearance. RViz22 can display it, but a physics simulator also needs to understand its physical properties.
+Until now, our robot has only had a visual appearance. RViz2 can display it, but a physics simulator also needs to understand its physical properties.
 
 We need three important elements:
 
@@ -87,7 +87,7 @@ For our simple robot, we will use zero for the cross terms (`ixy`, `ixz`, `iyz`)
 
 Open your existing file:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_description/urdf
 
 nano my_robot.urdf.xacro
@@ -290,19 +290,19 @@ These values are in kg·m².
 
 Run:
 
-```
+```bash
 ros2 run xacro xacro my_robot.urdf.xacro -o my_robot_generated.urdf
 ```
 
 Then:
 
-```
+```text
 check_urdf my_robot_generated.urdf
 ```
 
 Expected result:
 
-```
+```text
 robot name is: my_robot
 ---------- Successfully Parsed XML ---------------
 root Link: base_link has 2 child(ren)
@@ -312,7 +312,7 @@ root Link: base_link has 2 child(ren)
 
 Because we modified the Xacro file, rebuild the package:
 
-```
+```bash
 cd ~/ros2_ws
 
 colcon build --packages-select robot_description
@@ -322,11 +322,11 @@ source install/setup.bash
 
 Launch:
 
-```
+```bash
 ros2 launch robot_description display_robot.launch.py
 ```
 
-Open RViz22 and check that the robot still appears and the wheel sliders work.
+Open RViz2 and check that the robot still appears and the wheel sliders work.
 
 ---
 

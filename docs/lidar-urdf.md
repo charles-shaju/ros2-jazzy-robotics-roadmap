@@ -4,7 +4,7 @@
 
 Our robot description is stored at:
 
-```
+```text
 /ros2_ws/src/robot_description/urdf/my_robot_generated.urdf
 ```
 
@@ -68,7 +68,7 @@ Here, the LiDAR is positioned 0.2 metres above the `base_link` origin.
 
 This joint also establishes the fixed transform:
 
-```
+```text
 base_link
     |
     └── lidar_link

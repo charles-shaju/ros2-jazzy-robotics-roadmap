@@ -21,7 +21,7 @@ Instead of hardcoding these values, we can declare them as ROS 2 parameters and 
 
 For example:
 
-```
+```bash
 ros2 param set /robot_controller linear_speed 0.8
 ```
 
@@ -33,13 +33,13 @@ We'll use your existing `robot_basics` package on the Ubuntu laptop.
 
 Open a terminal:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_basics/robot_basics
 ```
 
 Create a file:
 
-```
+```bash
 nano parameter_demo.py
 ```
 
@@ -126,7 +126,7 @@ Calls the function every two seconds. This allows us to see parameter changes wh
 
 Open your package's `setup.py`:
 
-```
+```bash
 cd ~/ros2_ws/src/robot_basics
 nano setup.py
 ```
@@ -158,13 +158,13 @@ source install/setup.bash
 
 Open Terminal 1:
 
-```
+```bash
 ros2 run robot_basics parameter_demo
 ```
 
 Expected output:
 
-```
+```text
 Robot controller started!
 Linear Speed: 0.50 m/s | Wheel Radius: 0.10 m
 Linear Speed: 0.50 m/s | Wheel Radius: 0.10 m
@@ -184,7 +184,7 @@ ros2 param list
 
 You should find:
 
-```
+```text
 /robot_controller:
   linear_speed
   wheel_radius
@@ -198,7 +198,7 @@ ros2 param get /robot_controller linear_speed
 
 Expected:
 
-```
+```text
 Double value is: 0.5
 ```
 
@@ -210,31 +210,31 @@ ros2 param set /robot_controller linear_speed 0.8
 
 Expected:
 
-```
+```text
 Parameter set successfully
 ```
 
 Look at Terminal 1. You should now see:
 
-```
+```text
 Linear Speed: 0.80 m/s | Wheel Radius: 0.10 m
 ```
 
 D. Change the wheel radius
 
-```
+```bash
 ros2 param set /robot_controller wheel_radius 0.15
 ```
 
 Terminal 1 should now display:
 
-```
+```text
 Linear Speed: 0.80 m/s | Wheel Radius: 0.15 m
 ```
 
 E. Describe a parameter
 
-```
+```bash
 ros2 param describe /robot_controller linear_speed
 ```
 
@@ -246,13 +246,13 @@ ROS 2 also allows us to save parameters for reuse.
 
 Run:
 
-```
+```bash
 ros2 param dump /robot_controller
 ```
 
 Save them to a file:
 
-```
+```bash
 ros2 param dump /robot_controller > robot_params.yaml
 ```
 

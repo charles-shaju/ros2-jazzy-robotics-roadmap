@@ -1,6 +1,6 @@
-# Visualizing TF2 in RViz22
+# Visualizing TF2 in RViz2
 
-RViz22 is a 3D visualization tool for ROS 2. It allows us to see the robot model, coordinate frames, sensors, laser scans, and other ROS data.
+RViz2 is a 3D visualization tool for ROS 2. It allows us to see the robot model, coordinate frames, sensors, laser scans, and other ROS data.
 
 [从头手搓一台ros2复合机器人（带机械臂）_ros 机械臂-CSDN博客](https://images.openai.com/static-rsc-4/6oCjbDre6BGpVszhfx8zU0VYtU20SKANwxEtzr-SOLpAu4GIsAwdu8pAk6lU0oL-ymZOkS8XXOzVL_v6a6K9Eoo9JMLDzBJ9Wc1JrsCwDOlGrBusrQhF833iROpaYYMY_NLb445VqzBasy84HtQd8OEUII7zm4rkuRjdpiUdu_g?purpose=inline)
 ![Lesson illustration illustration](../images/image-11.png)
@@ -17,7 +17,7 @@ In this lesson, we'll:
 
 1. Generate a TF tree diagram.
     
-2. Visualize coordinate frames in RViz22.
+2. Visualize coordinate frames in RViz2.
     
 3. Understand the Fixed Frame setting.
     
@@ -28,7 +28,7 @@ In this lesson, we'll:
 
 On your Ubuntu laptop, open Terminal 1:
 
-```
+```bash
 ros2 run robot_basics dynamic_tf_broadcaster
 ```
 
@@ -36,7 +36,7 @@ Keep it running.
 
 Your node continuously publishes:
 
-```
+```text
 odom → base_link
 ```
 
@@ -46,7 +46,7 @@ Important: Stop the old static broadcaster if it is still running. For this exer
 
 Open Terminal 2:
 
-```
+```bash
 ros2 run tf2_tools view_frames
 ```
 
@@ -54,7 +54,7 @@ This command listens to TF information and generates a PDF showing the coordinat
 
 You should see something similar to:
 
-```
+```text
 Listening to tf data...
 Generating graph...
 ```
@@ -67,7 +67,7 @@ ls frames*
 
 Usually, it generates:
 
-```
+```text
 frames.pdf
 ```
 
@@ -83,15 +83,15 @@ You should see a tree similar to:
 
 This is called a TF tree.
 
-## 4. Open RViz22
+## 4. Open RViz2
 
 Open Terminal 3:
 
-```
+```text
 rviz2
 ```
 
-RViz22 should open with a 3D visualization window.
+RViz2 should open with a 3D visualization window.
 
 [RViz2 User Guide — ROS 2 documentation documentation](https://images.openai.com/static-rsc-4/YpHdwdmz0Hysgt-FAZxsLxieFwRh5pfRIf6JJziEZC9K7ZzmjqtX77XKNS8xd6ZVOCbWyrjiS0RgUY6R1REQQI3aaTUPSgZdmh5os98GWRPzUNPf2C3LM7z5jgqgB28Ye_x9dMMCSNTGzqfd-_h63GztmxSjZ5qTRtvq3cfmr0M?purpose=inline)
 ![Lesson illustration illustration](../images/image-15.png)
@@ -106,18 +106,18 @@ sudo apt install ros-jazzy-rviz2
 
 ## 5. Configure the Fixed Frame
 
-In RViz22, look at the left-side Displays panel.
+In RViz2, look at the left-side Displays panel.
 
 Find:
 
-```
+```text
 Global Options
     Fixed Frame: map
 ```
 
 Change `map` to:
 
-```
+```text
 odom
 ```
 
@@ -125,7 +125,7 @@ Why?
 
 Our dynamic broadcaster publishes the transform:
 
-```
+```text
 odom → base_link
 ```
 
@@ -133,7 +133,7 @@ Therefore, `odom` is the appropriate fixed reference frame for this exercise.
 
 ## 6. Add TF visualization
 
-In RViz22:
+In RViz2:
 
 1. Click Add at the bottom-left.
     
@@ -157,7 +157,7 @@ You can expand the TF display in the left panel to see the available frames.
 
 Our dynamic broadcaster updates:
 
-```
+```text
 self.x += 0.05self.angle += 0.02
 ```
 
@@ -169,7 +169,7 @@ This means:
     
 - The robot gradually rotates.
     
-- RViz22 receives updated transformations.
+- RViz2 receives updated transformations.
     
 - The `base_link` axes move relative to `odom`.
     

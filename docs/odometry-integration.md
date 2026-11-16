@@ -1,4 +1,4 @@
-# Odometry, TF2, and RViz22 Integration
+# Odometry, TF2, and RViz2 Integration
 
 Keyboard teleoperation completed
 
@@ -63,7 +63,7 @@ Keep this terminal running.
 
 In another terminal:
 
-```
+```bash
 ros2 topic list
 ```
 
@@ -71,13 +71,13 @@ You should see `/odom` and `/tf`.
 
 Inspect the odometry:
 
-```
+```bash
 ros2 topic echo /odom
 ```
 
 You should receive messages containing fields such as:
 
-```
+```text
 pose:
   pose:
     position:
@@ -103,7 +103,7 @@ Now drive the robot using the keyboard. Watch the `x`, `y` and orientation value
 
 Run:
 
-```
+```bash
 ros2 run tf2_ros tf2_echo odom base_link
 ```
 
@@ -119,7 +119,7 @@ If the command reports that the frame does not exist, we'll check the Gazebo TF 
 
 Launch RViz2:
 
-```
+```text
 rviz2
 ```
 
@@ -158,7 +158,7 @@ Open **7 terminals on your Ubuntu laptop**. Run the commands in order.
 
 ## **Terminal 1 — Start Gazebo**
 
-```
+```bash
 source /opt/ros/jazzy/setup.bash
 
 gz sim empty.sdf
@@ -208,7 +208,7 @@ Keep this terminal running.
 source /opt/ros/jazzy/setup.bash
 
 ros2 run teleop_twist_keyboard teleop_twist_keyboard \
-  --ros-args -p stamped:=false
+  --ros-args -p stamped:=true
 ```
 
 Keyboard controls:
@@ -264,13 +264,13 @@ If the robot appears but its wheels are missing, we will bridge Gazebo joint sta
 
 First, inspect the topics:
 
-```
+```bash
 ros2 topic list
 ```
 
 Expected important topics:
 
-```
+```text
 /cmd_vel
 /odom
 /tf
@@ -280,13 +280,13 @@ Expected important topics:
 
 Check odometry:
 
-```
+```bash
 ros2 topic echo /odom
 ```
 
 Press `Ctrl+C`, then check TF:
 
-```
+```bash
 ros2 run tf2_ros tf2_echo odom base_link
 ```
 
@@ -294,13 +294,13 @@ You should see the robot's translation and rotation changing when you drive it.
 
 If you still get `Invalid frame ID "odom"`, run:
 
-```
+```bash
 gz topic -l | grep -E 'tf|odom'
 ```
 
 Then verify the Gazebo TF topic is actually publishing:
 
-```
+```bash
 gz topic -e -t /model/my_robot/tf
 ```
 

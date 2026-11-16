@@ -2,7 +2,7 @@
 
 In the previous lesson, we published a fixed transformation:
 
-```
+```text
 base_link → laser_link
 ```
 
@@ -16,7 +16,7 @@ Imagine your robot moving forward and turning.
 
 Its position relative to the world changes continuously:
 
-```
+```text
 world → base_link
 ```
 
@@ -39,14 +39,14 @@ Use your Ubuntu laptop.
 
 ### Step 1: Create the Python file
 
-```
+```bash
 cd ~/ros2_ws/src/robot_basics/robot_basics
 touch dynamic_tf_broadcaster.py
 ```
 
 Open it:
 
-```
+```bash
 nano dynamic_tf_broadcaster.py
 ```
 
@@ -130,13 +130,13 @@ if __name__ == '__main__':
 
 Open your existing `setup.py`:
 
-```
+```bash
 nano ~/ros2_ws/src/robot_basics/setup.py
 ```
 
 Add this entry inside the existing `console_scripts` list:
 
-```
+```text
 'dynamic_tf'
 ```
 
@@ -144,7 +144,7 @@ Keep your existing entries.
 
 ### Step 4: Build the package
 
-```
+```bash
 cd ~/ros2_ws
 colcon build --packages-select robot_basics
 source install/setup.bash
@@ -152,13 +152,13 @@ source install/setup.bash
 
 ### Step 5: Run the broadcaster
 
-```
+```bash
 ros2 run robot_basics dynamic_tf_broadcaster
 ```
 
 Expected output:
 
-```
+```text
 Robot X position: 0.05
 Robot X position: 0.10
 Robot X position: 0.15
@@ -180,7 +180,7 @@ ros2 run tf2_ros tf2_echo odom base_link
 
 You should see the translation changing continuously:
 
-```
+```text
 Translation:
   x: 0.5
   y: 0.0
@@ -223,7 +223,7 @@ Your practical task
 
 Important: Stop your previous static broadcaster before testing this if you are still running it. Keep the dynamic broadcaster running in one terminal and use the second terminal for `tf2_echo`.
 
-Once this works, we'll learn how to visualize the TF tree in RViz22 and inspect it using `view_frames`.
+Once this works, we'll learn how to visualize the TF tree in RViz2 and inspect it using `view_frames`.
 
 ---
 
@@ -383,11 +383,11 @@ print(x, y, z, w)
 
 Output:
 
-```
+```text
 Quaternion:
 0.0 0.0 0.7071067811865475 0.7071067811865476
 ```
 
 ---
 
-[Next: Visualizing TF2 in RViz22](./rviz2.md)
+[Next: Visualizing TF2 in RViz2](./rviz2.md)

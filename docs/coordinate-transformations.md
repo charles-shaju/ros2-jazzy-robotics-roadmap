@@ -1,6 +1,6 @@
 # TF2 and Coordinate Transformations
 
-ROS 2 Jazzy | Ubuntu 24.04 LTS | Gazebo | RViz22 | Python
+ROS 2 Jazzy | Ubuntu 24.04 LTS | Gazebo | RViz2 | Python
 
 These notes summarize the complete Lesson 11 conversation, from TF2 fundamentals to Python broadcasters, listeners, point transformations, robot movement, and debugging.
 
@@ -80,7 +80,7 @@ For a typical mobile robot:
 
 Our robot's frame relationships are:
 
-```
+```text
 odom
  └── base_link
       ├── left_wheel_link
@@ -90,7 +90,7 @@ odom
 
 Later, when we implement localization:
 
-```
+```text
 map
  └── odom
       └── base_link
@@ -129,20 +129,20 @@ Each child frame has one parent in the TF tree.
 
 ### **Important topics**
 
-```
+```bash
 ros2 topic list | grep tf
 ```
 
 Expected:
 
-```
+```text
 /tf
 /tf_static
 ```
 
 Inspect:
 
-```
+```bash
 ros2 topic echo /tf --once
 ros2 topic echo /tf_static --once
 ```
@@ -153,7 +153,7 @@ ros2 topic echo /tf_static --once
 
 Create a Python node that publishes the transform:
 
-```
+```text
 base_link
  └── sensor_demo
 ```
@@ -170,7 +170,7 @@ The sensor is positioned 20 cm forward and 15 cm above the robot's origin.
 
 ### **Create the package**
 
-```
+```python
 cd /ros2_ws/src
 
 ros2 pkg create tf2_practice \
@@ -319,13 +319,13 @@ if __name__ == '__main__':
 
 ### **Important function:** `lookup_transform()`
 
-```
+```text
 transform = buffer.lookup_transform(    target_frame,    source_frame,    time)
 ```
 
 For our robot:
 
-```
+```python
 lookup_transform(    'odom',    'base_link',    rclpy.time.Time())
 ```
 
@@ -390,7 +390,7 @@ Because the sensor has no rotation relative to `base_link`:
 
 Install the dependency:
 
-```
+```bash
 sudo apt install ros-jazzy-tf2-geometry-msgs
 ```
 
@@ -472,19 +472,19 @@ if __name__ == '__main__':
 
 Register in `setup.py`:
 
-```
+```text
 'transform_point = tf2_practice.transform_point:main',
 ```
 
 Add to `package.xml`:
 
-```
+```text
 <exec_depend>tf2_geometry_msgs</exec_depend>
 ```
 
 Build and run:
 
-```
+```bash
 cd /ros2_ws
 colcon build --packages-select tf2_practice
 source install/setup.bash
@@ -495,7 +495,7 @@ ros2 run tf2_practice transform_point \
 
 Expected:
 
-```
+```text
 Obstacle in base_link: x=2.20, y=0.00, z=0.15
 ```
 
@@ -585,7 +585,7 @@ Find the position of an obstacle relative to the odometry frame while the robot 
 
 Our transformation chain is:
 
-```
+```text
 odom
  └── base_link
       └── sensor_demo
@@ -679,7 +679,7 @@ if __name__ == '__main__':
 ```
 
 Register in `setup.py`:
-```
+```text
 'obstacle_in_odom = tf2_practice.obstacle_in_odom:main',
 ```
 
@@ -702,7 +702,7 @@ ros2 run tf2_practice obstacle_in_odom \
 
 When the robot is initially at the odometry origin, facing forward:
 
-```
+```text
 Obstacle in odom: x=2.20, y=0.00, z=0.15
 ```
 
@@ -720,7 +720,7 @@ In an actual LiDAR system, sensor measurements change as the robot moves. Each m
 
 During this lesson, we initially tried:
 
-```
+```text
 /diff_drive_controller/cmd_vel_unstamped
 ```
 
@@ -816,19 +816,19 @@ These commands are useful throughout ROS 2 development.
 
 ### **Generate the TF tree**
 
-```
+```bash
 ros2 run tf2_tools view_frames
 ```
 
 Open the generated PDF:
 
-```
+```text
 xdg-open frames.pdf
 ```
 
 ### **Check the robot's transform**
 
-```
+```bash
 ros2 run tf2_ros tf2_echo odom base_link
 ```
 
@@ -836,14 +836,14 @@ The translation and rotation should change as the robot moves.
 
 ### **Check simulation time**
 
-```
+```bash
 ros2 param get /diff_drive_controller use_sim_time
 ros2 param get /obstacle_in_odom use_sim_time
 ```
 
 Expected:
 
-```
+```text
 Boolean value is: True
 ```
 
@@ -869,11 +869,11 @@ The robot initially failed to move because we published to `cmd_vel_unstamped`, 
 
 Always inspect the actual ROS graph:
 
-```
+```bash
 ros2 topic list -t | grep cmd_vel
 ```
 
-```
+```bash
 ros2 topic info /diff_drive_controller/cmd_vel -v
 ```
 

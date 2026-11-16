@@ -26,31 +26,6 @@ Before starting, make sure you have:
 No previous ROS 2 experience is required. The first lesson guides you through
 the system checks and ROS 2 setup.
 
-## Getting started
-
-On an Ubuntu 24.04 laptop, install the basic ROS 2 tools and create a workspace:
-
-```bash
-sudo apt update
-sudo apt install ros-jazzy-desktop python3-colcon-common-extensions
-
-source /opt/ros/jazzy/setup.bash
-mkdir -p ~/ros2_ws/src
-cd ~/ros2_ws
-colcon build
-source install/setup.bash
-ros2 doctor --report
-```
-
-Then continue with [System configuration](docs/01-sys-config.md). It explains
-the laptop and Raspberry Pi setup in more detail.
-
-## Demo
-
-The roadmap builds a simulated mobile robot in Gazebo and visualizes its state
-and sensor data in RViz2.
-
-![Gazebo simulation showing the mobile robot](images/image-20.png)
 
 ## Learning path
 

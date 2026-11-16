@@ -1,6 +1,6 @@
 # Adding Mass, Inertia and Collision to URDF
 
-Until now, our robot has only had a visual appearance. RViz2 can display it, but a physics simulator also needs to understand its physical properties.
+Until now, our robot has only had a visual appearance. RViz22 can display it, but a physics simulator also needs to understand its physical properties.
 
 We need three important elements:
 
@@ -12,7 +12,7 @@ We need three important elements:
     
 
 [An Introduction to Understanding Visual Robot Models with URDF](https://images.openai.com/static-rsc-4/ZbYBgqrqT_2VWk63LbAewbJ_w8VHfq9firsquysKKXU66txMjA_zLd2ErnmgiEH6Zb2w9sZou8SLlarA3vwLy5ES3pSoowWgIPcY1gnj6KB-a9eQ37aHbedLjWACthGO1ADh7yPht2-efYopcF-nvY-r2IVn1RrzxoP5mHAJiM0?purpose=inline)
-![alt text](../images/image-18.png)
+![Lesson illustration illustration](../images/image-18.png)
 [linkedin.com](https://www.linkedin.com/pulse/introduction-understanding-visual-robot-models-urdf-kangal)
 
 ## 1. Visual, collision and inertial
@@ -261,7 +261,7 @@ This defines cylindrical collision geometry, rotated to match the wheel's orient
 ## 6. Understand the inertia values
 
 For a rectangular box, the inertia equations are:
-![alt text](../images/image-19.png)
+![Lesson illustration illustration](../images/image-19.png)
 
 Where:
 
@@ -326,7 +326,7 @@ Launch:
 ros2 launch robot_description display_robot.launch.py
 ```
 
-Open RViz2 and check that the robot still appears and the wheel sliders work.
+Open RViz22 and check that the robot still appears and the wheel sliders work.
 
 ---
 

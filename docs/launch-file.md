@@ -3,7 +3,7 @@
 A launch file is a Python file that describes which ROS 2 nodes should start and how they should be configured.
 
 [How to Use ROS 2 Launch Files | Foxglove](https://images.openai.com/static-rsc-4/dYZvioI7cv_AbtmnPic6rgPgl-WbdfJVsnsZhx6HpdCy_lOoYyxIinJd50ofopIserU65_-bFK_m_izqlr5GgaR7pFDx0fyW8gh3dfBOp2vRJmtr6pC01ZqsfqxhLH5GWLyZqK7MIwdxRF9zkEwXYBGVoOvEdsKSAL26OVZNv5U?purpose=inline)
-![alt text](../images/image-5.png)
+![Lesson illustration illustration](../images/image-5.png)
 [foxglove.dev](https://foxglove.dev/blog/how-to-use-ros2-launch-files)
 
 For our example, one launch file will start:

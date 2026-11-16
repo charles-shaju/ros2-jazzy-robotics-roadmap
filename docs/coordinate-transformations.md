@@ -1,6 +1,6 @@
 # TF2 and Coordinate Transformations
 
-ROS 2 Jazzy | Ubuntu 24.04 LTS | Gazebo | RViz2 | Python
+ROS 2 Jazzy | Ubuntu 24.04 LTS | Gazebo | RViz22 | Python
 
 These notes summarize the complete Lesson 11 conversation, from TF2 fundamentals to Python broadcasters, listeners, point transformations, robot movement, and debugging.
 
@@ -64,7 +64,7 @@ For a typical mobile robot:
 - **Y:** Left
     
 - **Z:** Up
-![alt text](../images/image-35.png)
+![Lesson illustration illustration](../images/image-35.png)
 ### **Important frames**
 
 |Frame|Description|
@@ -113,7 +113,7 @@ Each child frame has one parent in the TF tree.
 
 **Important:** A sensor permanently attached to the robot normally uses a static transform or a fixed URDF joint. Its transform relative to `base_link` stays constant even when the robot moves.
 
-![alt text](../images/image-36.png)
+![Lesson illustration illustration](../images/image-36.png)
 
 ### **Main components**
 
@@ -377,15 +377,15 @@ Convert an obstacle's position from `sensor_demo` to `base_link`.
 
 Given:
 
-![alt text](../images/image-37.png)
+![Lesson illustration illustration](../images/image-37.png)
 
 Sensor offset:
 
-![alt text](../images/image-38.png)
+![Lesson illustration illustration](../images/image-38.png)
 
 Because the sensor has no rotation relative to `base_link`:
 
-![alt text](../images/image-39.png)
+![Lesson illustration illustration](../images/image-39.png)
 ### **Python implementation**
 
 Install the dependency:
@@ -521,7 +521,7 @@ Simple addition works only when two coordinate frames have the same orientation.
 If a robot turns 90°, an obstacle directly in front of it no longer lies along the original odometry X axis.
 
 The general transformation equation is:
-![alt text](../images/image-41.png)
+![Lesson illustration illustration](../images/image-41.png)
 
 Where:
 
@@ -535,38 +535,38 @@ Where:
     
 
 ### **2D rotation matrix**
-![alt text](../images/image-42.png)
+![Lesson illustration illustration](../images/image-42.png)
 
 For a 90° counterclockwise rotation:
 
-![alt text](../images/image-43.png)
+![Lesson illustration illustration](../images/image-43.png)
 
 ### **Example**
 
 Robot position:
 
-![alt text](../images/image-44.png)
+![Lesson illustration illustration](../images/image-44.png)
 
 Robot orientation:
 
-![alt text](../images/image-45.png)
+![Lesson illustration illustration](../images/image-45.png)
 
 Obstacle relative to robot:
 
-![alt text](../images/image-46.png)
+![Lesson illustration illustration](../images/image-46.png)
 
 Applying the transformation:
 
-![alt text](../images/image-47.png)
+![Lesson illustration illustration](../images/image-47.png)
 
 ### **What is a quaternion?**
 
 A quaternion represents 3D orientation using four values:
 
-![alt text](../images/image-48.png)
+![Lesson illustration illustration](../images/image-48.png)
 
 For a robot rotating only around its Z axis:
-![alt text](../images/image-50.png)
+![Lesson illustration illustration](../images/image-50.png)
 
 |Rotation|Quaternion (x, y, z, w)|
 |---|---|

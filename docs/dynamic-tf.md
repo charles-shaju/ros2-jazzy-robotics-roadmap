@@ -223,7 +223,7 @@ Your practical task
 
 Important: Stop your previous static broadcaster before testing this if you are still running it. Keep the dynamic broadcaster running in one terminal and use the second terminal for `tf2_echo`.
 
-Once this works, we'll learn how to visualize the TF tree in RViz2 and inspect it using `view_frames`.
+Once this works, we'll learn how to visualize the TF tree in RViz22 and inspect it using `view_frames`.
 
 ---
 
@@ -251,7 +251,7 @@ For a 2D robot moving on a flat floor, we mainly need three values:
     
 
 [Yaw Pitch Roll Order at Everett Reynolds blog](https://images.openai.com/static-rsc-4/xT_ClKBi5nIzlpSPnwAXbCkHjuk5K1ZGdkLs9zDa9F1Jbu39zlWICD5xNVZbIiHW1JntjuXtWoLN4XLcgLIH-mGu2ZkSAG0VJs4mCr7tuRmiM0opyab1qW6ugJMQ3PBUvnCesz5nUPwcG40_ZPoKIJlvsb8XB62F4ZSUkxwzOHg?purpose=inline)
-![alt text](../images/image-6.png)
+![Lesson illustration illustration](../images/image-6.png)
 [storage.googleapis.com](https://storage.googleapis.com/dkkrzunmcceqhe/yaw-pitch-roll-order.html)
 
 For a differential-drive robot:
@@ -301,7 +301,7 @@ Because our robot rotates only around the Z-axis (yaw).
 
 For a rotation around the Z-axis:
 
-![alt text](../images/image-7.png)
+![Lesson illustration illustration](../images/image-7.png)
 
 Here, \(\theta\) is the yaw angle in radians.
 
@@ -311,15 +311,15 @@ Suppose the robot rotates 90°.
 
 First, convert degrees into radians:
 
-![alt text](../images/image-8.png)
+![Lesson illustration illustration](../images/image-8.png)
 
 Then divide the angle by 2:
 
-![alt text](../images/image-9.png)
+![Lesson illustration illustration](../images/image-9.png)
 
 Calculate:
 
-![alt text](../images/image-10.png)
+![Lesson illustration illustration](../images/image-10.png)
 
 
 Therefore, the quaternion is:
@@ -390,4 +390,4 @@ Quaternion:
 
 ---
 
-[Next: Visualizing TF2 in RViz2](./rviz2.md)
+[Next: Visualizing TF2 in RViz22](./rviz2.md)

@@ -1,15 +1,15 @@
-# Odometry, TF2, and RViz2 Integration
+# Odometry, TF2, and RViz22 Integration
 
 Keyboard teleoperation completed
 
-Your robot can now move in Gazebo using ROS 2 keyboard commands. Next, we'll learn how to **track the robot's position and visualize its movement in RViz**.
+Your robot can now move in Gazebo using ROS 2 keyboard commands. Next, we'll learn how to **track the robot's position and visualize its movement in RViz2**.
 
 ## **1. What is odometry?**
 
 Odometry estimates how far a robot has moved and how its orientation has changed.
 
 For a differential-drive robot, wheel rotations can be used to estimate its motion.
-![alt text](../images/image-23.png)
+![Lesson illustration illustration](../images/image-23.png)
 Illustration of a robot's estimated path from its starting position
 
 
@@ -111,13 +111,13 @@ This should continuously show the translation and rotation between the odometry 
 
 If the command reports that the frame does not exist, we'll check the Gazebo TF topic and the bridge configuration.
 
-## **6. Visualize movement in RViz**
+## **6. Visualize movement in RViz2**
 
 [Robot Description - DiffBot Differential Drive Mobile Robot](https://images.openai.com/static-rsc-4/Sfw0LRqTJXY0fsZRe_KMirh4j-dXwqCRoW_AMoDHJPqlQNx8d8cbsqN5hhkVlRxCMhd3gkNSpSzrh8P1ucqeGNM5TzhJHBVxaOpFFnPXEel2JS5wOZk95RkGd3jjpikLQuU4tJ7W_I_ozbPvI8yjdTcwoDDb9uMx6op6Ulr9bJo?purpose=inline)
 
 [ros-mobile-robots.com](https://ros-mobile-robots.com/robot-description/)
 
-Launch RViz:
+Launch RViz2:
 
 ```
 rviz2
@@ -125,7 +125,7 @@ rviz2
 
 Set the following:
 
-|RViz setting|Value|
+|RViz2 setting|Value|
 |---|---|
 |Fixed Frame|`odom`|
 |Add → TF|Display transforms|
@@ -141,7 +141,7 @@ For the RobotModel display to show the complete robot correctly, you'll also nee
 
 # **ROS 2 Jazzy + Gazebo — Complete Terminal Setup**
 
-Here is the complete setup to run your robot in **Gazebo Harmonic**, control it using the keyboard, publish odometry and TF, and visualize it in RViz.
+Here is the complete setup to run your robot in **Gazebo Harmonic**, control it using the keyboard, publish odometry and TF, and visualize it in RViz2.
 
 We'll use your existing robot:
 
@@ -240,7 +240,7 @@ Keep this terminal running.
 
 **Note:** `robot_state_publisher` needs `/joint_states` to publish transforms for movable wheel joints. Without joint states, the chassis can still have a valid TF, but wheel link transforms may be missing.
 
-## **Terminal 6 — RViz**
+## **Terminal 6 — RViz2**
 
 ```bash
 source /opt/ros/jazzy/setup.bash
@@ -249,7 +249,7 @@ source /ros2_ws/install/setup.bash
 rviz2
 ```
 
-Configure RViz:
+Configure RViz2:
 
 |Setting|Value|
 |---|---|
@@ -305,7 +305,7 @@ gz topic -e -t /model/my_robot/tf
 ```
 
 If that topic does not exist or has no messages, the bridge must be adjusted to the topic Gazebo actually publishes.
-![alt text](../images/image-24.png)
+![Lesson illustration illustration](../images/image-24.png)
 
 ---
 

@@ -10,8 +10,8 @@ Imagine your robot has a motor.
 
 You want to turn the motor ON or OFF. Instead of continuously publishing messages, you can send a request to the robot.
 
-[ROS2: Robot Operating System. 1. What is ROS 2? | by Dilip Kumar | Jan, 2026 | Medium](https://images.openai.com/static-rsc-4/-_Mq6N_s9duChLf6ZD3rOEr5g4yY_xs73zFF2WqJBBAU48Hooax2Z_DSU0oJgX7z2icR4ejjADwq3VTEowt6uPwrIaOpTuQrhVz99ER8aznycSGQzV-Tf03KVZQG-SW1LNkXq2ZjRsTSZqbZVBsfWIsjIWE5TfCE8KWuCxEfqlg?purpose=inline)
-![alt text](../images/image-2.png)
+[ROS 2: Robot Operating System. 1. What is ROS 2? | by Dilip Kumar | Jan, 2026 | Medium](https://images.openai.com/static-rsc-4/-_Mq6N_s9duChLf6ZD3rOEr5g4yY_xs73zFF2WqJBBAU48Hooax2Z_DSU0oJgX7z2icR4ejjADwq3VTEowt6uPwrIaOpTuQrhVz99ER8aznycSGQzV-Tf03KVZQG-SW1LNkXq2ZjRsTSZqbZVBsfWIsjIWE5TfCE8KWuCxEfqlg?purpose=inline)
+![Lesson illustration illustration](../images/image-2.png)
 [dilipkumar.medium.com](https://dilipkumar.medium.com/ros2-robot-operating-system-5978dcfd73f3)
 
 The communication works like this:
@@ -274,7 +274,7 @@ Previously, we created a service server and called it using the terminal. Now we
 
 Our communication will look like this:
 
-[ROS2: Robot Operating System. 1. What is ROS 2? | by Dilip Kumar | Jan, 2026 | Medium](https://images.openai.com/static-rsc-4/-_Mq6N_s9duChLf6ZD3rOEr5g4yY_xs73zFF2WqJBBAU48Hooax2Z_DSU0oJgX7z2icR4ejjADwq3VTEowt6uPwrIaOpTuQrhVz99ER8aznycSGQzV-Tf03KVZQG-SW1LNkXq2ZjRsTSZqbZVBsfWIsjIWE5TfCE8KWuCxEfqlg?purpose=inline)
+[ROS 2: Robot Operating System. 1. What is ROS 2? | by Dilip Kumar | Jan, 2026 | Medium](https://images.openai.com/static-rsc-4/-_Mq6N_s9duChLf6ZD3rOEr5g4yY_xs73zFF2WqJBBAU48Hooax2Z_DSU0oJgX7z2icR4ejjADwq3VTEowt6uPwrIaOpTuQrhVz99ER8aznycSGQzV-Tf03KVZQG-SW1LNkXq2ZjRsTSZqbZVBsfWIsjIWE5TfCE8KWuCxEfqlg?purpose=inline)
 
 [dilipkumar.medium.com](https://dilipkumar.medium.com/ros2-robot-operating-system-5978dcfd73f3)
 

@@ -29,7 +29,7 @@ Imagine asking your robot to move forward by 2 metres.
 The communication works like this:
 
 [Programiranje robota pomoću ROS 2 sustava - VidiLAB](https://images.openai.com/static-rsc-4/rXc0HyTlP1R2c01f2jbfDz1x6xkBwJBO7xEnLkdMTgHNSwo3akKBAg-k2l23VAT0PTT3THTxSqOf8CFskBlCPapUx3V2eUrfR3ki86mqPkVEO9sApIHp95J9pjMH6mFmxB2GCvDmGU4APbA39tJvNWxeIf41dZxYW_i_wYEN8cw?purpose=inline)
-![alt text](../images/image-3.png)
+![Lesson illustration illustration](../images/image-3.png)
 [vidilab.com](https://www.vidilab.com/teme/softverska-tema/7895-programiranje-robota-pomocu-ros-2-sustava)
 
 1. Goal: Client requests the robot to move 2 metres.

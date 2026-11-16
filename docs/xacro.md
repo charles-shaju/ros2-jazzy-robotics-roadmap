@@ -242,7 +242,7 @@ root Link: base_link has 2 child(ren)
 ```
 
 ---
-#  Load Xacro directly into RViz2
+#  Load Xacro directly into RViz22
 
 Previously, our launch file loaded:
 
@@ -384,7 +384,7 @@ Open another terminal:
 rviz2
 ```
 
-In RViz2:
+In RViz22:
 
 1. Set Fixed Frame to `base_link`.
     

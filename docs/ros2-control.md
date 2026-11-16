@@ -1,11 +1,11 @@
 # What is `ros2_control`?
 
 `ros2_control` is a framework that connects ROS 2 controllers to robot hardware or simulation.
-![alt text](../images/image-25.png)
+![Lesson illustration illustration](../images/image-25.png)
 
 It provides a standardized way to control motors, read sensors, and manage robot joints without rewriting the entire control system for different hardware.
 
-![alt text](../images/image-26.png)
+![Lesson illustration illustration](../images/image-26.png)
 ## **2. Important components**
 
 |Component|Purpose|
@@ -176,7 +176,7 @@ Stop the publisher with `Ctrl+C` and send a zero-velocity command when finished.
 
 This is the most important checklist when working with `ros2_control`.
 
-![alt text](../images/image-27.png)
+![Lesson illustration illustration](../images/image-27.png)
 
 ## **6. Controller lifecycle**
 
@@ -209,7 +209,7 @@ ros2 control switch_controllers --deactivate diff_drive_controller
 |Data publishes, robot does not move|Wrong topic, type, or inactive controller|Inspect `ros2 node info` and `/joint_states`|
 |Wheels rotate, body does not move|Collision, friction, or joint geometry issue|Inspect Gazebo physics and URDF|
 |Robot moves but odometry is wrong|Incorrect wheel dimensions or encoder feedback|Check wheel radius, separation, and joint states|
-|Robot moves in Gazebo but not RViz|Missing or inconsistent TF|Inspect `odom → base_link` and `robot_state_publisher`|
+|Robot moves in Gazebo but not RViz2|Missing or inconsistent TF|Inspect `odom → base_link` and `robot_state_publisher`|
 
 ### **Errors we actually encountered**
 
@@ -308,7 +308,7 @@ You should be comfortable with:
 - **Debugging:** Diagnosing problems across ROS topics, controllers, hardware and simulation.
     
 
-For our roadmap, the next important step is **verifying odometry and the complete TF tree in RViz**, followed by sensors, SLAM and autonomous navigation with Nav2.
+For our roadmap, the next important step is **verifying odometry and the complete TF tree in RViz2**, followed by sensors, SLAM and autonomous navigation with Nav2.
 
 The central principle to remember is:
 
@@ -365,7 +365,7 @@ Angular velocity describes rotation around an axis, measured in radians per seco
 
 It estimates the robot's pose:
 
-![alt text](../images/image-28.png)
+![Lesson illustration illustration](../images/image-28.png)
 
 - `x` — position along the X-axis (meters)
     
@@ -398,14 +398,14 @@ Odometry is essential for:
 Our robot has two independently driven wheels.
 
 [Robotics & Automation Series Part 13: Mobile Robotics - Wasil Zafar](https://images.openai.com/static-rsc-4/XBNrVu6feczTGwRZNChBpXVG6y98AacUHioVso9CFMznu63uNJHD5TNd6mI0u1sfSOG-Q7kBB278SpLZ0fOEhwnlfjg_UP0l4A8lZg1vB20RESktZZAK_xZOs1E7JXdRFuNJ1zjGQEkeh-43oWVe32JI5yNi9fMDz9rMigUWcXQ?purpose=inline)
-![alt text](../images/image-29.png)
+![Lesson illustration illustration](../images/image-29.png)
 [wasilzafar.com](https://www.wasilzafar.com/pages/series/robotics-automation/robotics-mobile-field.html)
 
 The robot's movement depends on the velocities of its left and right wheels.
 
 ### **Important formulas**
 
-![alt text](../images/image-30.png)
+![Lesson illustration illustration](../images/image-30.png)
 
 Where:
 
@@ -418,18 +418,18 @@ Where:
 
 Wheel linear velocity is calculated from angular velocity:
 
-![alt text](../images/image-31.png)
+![Lesson illustration illustration](../images/image-31.png)
 
 Where \(r\) is the wheel radius and \(\dot{\phi}\) is wheel angular velocity.
 
 The robot's position is updated using:
-![alt text](../images/image-32.png)
+![Lesson illustration illustration](../images/image-32.png)
 
 These equations are integrated over time to estimate the robot's changing pose.
 
 ## **4. ROS 2 Odometry Architecture**
 
-![alt text](../images/image-33.png)
+![Lesson illustration illustration](../images/image-33.png)
 
 The controller receives velocity commands, controls the wheels, reads wheel feedback, and estimates the robot's movement.
 
@@ -514,10 +514,10 @@ In real robots, wheel odometry alone is insufficient for reliable long-distance 
 
 A typical industry architecture is:
 
-![alt text](../images/image-34.png)
+![Lesson illustration illustration](../images/image-34.png)
 
-Common industry tools include `ros2_control`, `diff_drive_controller`, `robot_localization`, RViz2, SLAM Toolbox, and Nav2.
+Common industry tools include `ros2_control`, `diff_drive_controller`, `robot_localization`, RViz22, SLAM Toolbox, and Nav2.
 
 ---
 
-[Next: LiDAR](./lidar.md)
+[Next: LiDAR fundamentals](./lidar.md)

@@ -17,7 +17,7 @@ For example, consider a differential-drive robot with:
 
 Each part has its own coordinate frame.
 
-[ROS2 Navigation: Transformations](https://images.openai.com/static-rsc-4/JUrzSCwdtj9COJe_rdImjSHe5y9S2MFI90xGNqqZNZFnYlS329ZEvK5G0r35IwNrumH5iA_vvFuZ7pnw0Ig1V5-XLqBYws3wjuakys_m11daM85pOIf8oxta8ikEiJSXD2C3qltxtwOQ7VOvs5E8tGEH78MFBJKwSCdjlMH4ZM4?purpose=inline)
+[ROS 2 Navigation: Transformations](https://images.openai.com/static-rsc-4/JUrzSCwdtj9COJe_rdImjSHe5y9S2MFI90xGNqqZNZFnYlS329ZEvK5G0r35IwNrumH5iA_vvFuZ7pnw0Ig1V5-XLqBYws3wjuakys_m11daM85pOIf8oxta8ikEiJSXD2C3qltxtwOQ7VOvs5E8tGEH78MFBJKwSCdjlMH4ZM4?purpose=inline)
 
 [robotics.snowcron.com](https://robotics.snowcron.com/robotics_ros2/nav_basics_transformations.htm)
 

@@ -4,7 +4,7 @@ A hands-on, beginner-friendly guide to learning ROS 2 Jazzy, robot simulation, c
 
 ## About This Repository
 
-This repository documents my journey learning ROS 2 through practical robotics experiments using Ubuntu 24.04, ROS 2 Jazzy, Gazebo, RViz2, and Raspberry Pi 4.
+This repository documents my journey learning ROS 2 through practical robotics experiments using Ubuntu 24.04, ROS 2 Jazzy, Gazebo, RViz22, and Raspberry Pi 4.
 
 Each tutorial explains:
 - **What** the technology is
@@ -12,6 +12,19 @@ Each tutorial explains:
 - **How** to implement it
 - How to verify and troubleshoot it
 - How it is used in real-world robotics
+
+## Prerequisites
+
+Before starting, make sure you have:
+
+- Ubuntu 24.04 on a laptop or desktop
+- Basic Linux terminal and command-line skills
+- Basic Python knowledge
+- Git installed
+- A working internet connection for installing ROS 2 packages
+
+No previous ROS 2 experience is required. The first lesson guides you through
+the system checks and ROS 2 setup.
 
 ## Learning path
 
@@ -26,15 +39,21 @@ without returning to this page.
 6. [Launch files](docs/launch-file.md)
 7. [Introduction to TF2](docs/tf2.md)
 8. [Dynamic TF broadcaster](docs/dynamic-tf.md)
-9. [Visualizing TF2 in RViz2](docs/rviz2.md)
+9. [Visualizing TF2 in RViz22](docs/rviz2.md)
 10. [URDF: Create your first robot model](docs/urdf.md)
 11. [Xacro: Simplify URDF](docs/xacro.md)
 12. [Add mass, inertia, and collision to URDF](docs/mass-inertia-collision.md)
 13. [Gazebo simulation](docs/05-gazebo.md)
-14. [Odometry, TF2, and RViz2 integration](docs/odometry-integration.md)
-15. [TF2 and coordinate transformations](docs/coordinate-transformations.md)
-16. [ros2_control](docs/ros2-control.md)
-17. [LiDAR](docs/lidar.md)
+14. [Spawn your robot in Gazebo](docs/06-gazebo-spawn.md)
+15. [Make your robot move in Gazebo](docs/07-gazebo-movement.md)
+16. [Control Gazebo with ROS 2](docs/08-gazebo-ros2-control.md)
+17. [Odometry, TF2, and RViz22 integration](docs/odometry-integration.md)
+18. [TF2 and coordinate transformations](docs/coordinate-transformations.md)
+19. [ros2_control](docs/ros2-control.md)
+20. [LiDAR fundamentals](docs/lidar.md)
+21. [Add a LiDAR sensor to a URDF](docs/lidar-urdf.md)
+22. [Configure a Gazebo world for LiDAR](docs/lidar-gazebo-world.md)
+23. [Run and debug the LiDAR simulation](docs/lidar-operation.md)
 
 ## Goal
 

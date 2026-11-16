@@ -389,7 +389,7 @@ ros2 launch robot_description display_robot.launch.py
 You should see a joint control window.
 
 purpose=inline)
-![alt text](../images/image-16.png)
+![Lesson illustration illustration](../images/image-16.png)
 [cloud.tencent.com](https://cloud.tencent.com/developer/article/2520299)
 
 Open another terminal and run:
@@ -398,7 +398,7 @@ Open another terminal and run:
 rviz2
 ```
 
-In RViz2:
+In RViz22:
 
 1. Set Fixed Frame to `base_link`.
     
@@ -416,11 +416,11 @@ Also check:
 
 - Global Options → Fixed Frame = `base_link`
     
-- RobotModel → Description Topic = `/robot_description` (if your RViz2 version shows this setting).
+- RobotModel → Description Topic = `/robot_description` (if your RViz22 version shows this setting).
 
 You should see your blue robot body and two black wheels.
 
-![alt text](../images/image-17.png)
+![Lesson illustration illustration](../images/image-17.png)
 You can move the wheel sliders in the joint control window and observe the robot model.
 
 ## 9. Important ROS 2 commands

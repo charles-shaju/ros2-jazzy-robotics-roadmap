@@ -19,7 +19,7 @@ A node is an individual program that performs a particular task in a robot syste
 Imagine our future two-wheeled robot:
 
 [How LiDAR and IMUs enable autonomous robots | Pooja Anandathirtha posted on the topic | LinkedIn](https://images.openai.com/static-rsc-4/C24SFgzFC05ADLiDkYOOkOLCiRKNA_I1KYdowyeVB8c10Wx-L03vKuTSRTABnwSEHtpCvz55-mU0KJ_y037l721AMhU4IYM6pJRM7Rt3GzNWSAAZSAKr2fndyQqSyn9Z4kfzKtLvh-nj32pPDoY2cF1ygI3Q2BK6rPZ-v5XRdmo?purpose=inline)
-![alt text](../images/image.png)
+![Lesson illustration illustration](../images/image.png)
 
 
 It might contain these nodes:
@@ -52,7 +52,7 @@ For example:
 ```
 
 Consider the following communication:
-![alt text](../images/image-1.png)
+![Lesson illustration illustration](../images/image-1.png)
 
 The publisher sends messages. The subscriber receives them.
 

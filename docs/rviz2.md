@@ -1,15 +1,15 @@
-# Visualizing TF2 in RViz2
+# Visualizing TF2 in RViz22
 
-RViz2 is a 3D visualization tool for ROS 2. It allows us to see the robot model, coordinate frames, sensors, laser scans, and other ROS data.
+RViz22 is a 3D visualization tool for ROS 2. It allows us to see the robot model, coordinate frames, sensors, laser scans, and other ROS data.
 
 [从头手搓一台ros2复合机器人（带机械臂）_ros 机械臂-CSDN博客](https://images.openai.com/static-rsc-4/6oCjbDre6BGpVszhfx8zU0VYtU20SKANwxEtzr-SOLpAu4GIsAwdu8pAk6lU0oL-ymZOkS8XXOzVL_v6a6K9Eoo9JMLDzBJ9Wc1JrsCwDOlGrBusrQhF833iROpaYYMY_NLb445VqzBasy84HtQd8OEUII7zm4rkuRjdpiUdu_g?purpose=inline)
-![alt text](../images/image-11.png)
+![Lesson illustration illustration](../images/image-11.png)
 
-[TurtleBot2 kobukiがやってきた #4（ROS2 Rviz2編）](https://images.openai.com/static-rsc-4/fkQIcXjT6TPLeHZgJfTSLgI35AVzsQ8xALyiqMkVrYJyL-tJ0g-f_ZMNRUDyXSjv2US5zuFjxmjlyIx-KLKvsA75R_mT-RT09B1SQngJC04JJDEtCA5gU75Q4X-6bl2Mmf6VWvl6hg9cOTCnqStqMrIAinp1fBogkctZ3zNnjAk?purpose=inline)
-![alt text](../images/image-12.png)
+[TurtleBot2 kobukiがやってきた #4（ROS 2 Rviz2編）](https://images.openai.com/static-rsc-4/fkQIcXjT6TPLeHZgJfTSLgI35AVzsQ8xALyiqMkVrYJyL-tJ0g-f_ZMNRUDyXSjv2US5zuFjxmjlyIx-KLKvsA75R_mT-RT09B1SQngJC04JJDEtCA5gU75Q4X-6bl2Mmf6VWvl6hg9cOTCnqStqMrIAinp1fBogkctZ3zNnjAk?purpose=inline)
+![Lesson illustration illustration](../images/image-12.png)
 
-[Mapping and Localization in ROS2 · Robot & Chisel](https://images.openai.com/static-rsc-4/S7hIpQsXwdgHoJF6FGXcEa95SVXIGH_5pW2UJCXOZUr6YHLDCxhSccu0QH-M2DoCF6643Oh56p5lT0xjlWLbjJ4zJ6QGFvMeyLkpjJvJZsSzn1onZv3bn5LmXUMi0Cvh6-GHhZVXGL_3-QUogoPcamMmQ5OBmFIC3VP9dPg-YHg?purpose=inline)
-![alt text](../images/image-13.png)
+[Mapping and Localization in ROS 2 · Robot & Chisel](https://images.openai.com/static-rsc-4/S7hIpQsXwdgHoJF6FGXcEa95SVXIGH_5pW2UJCXOZUr6YHLDCxhSccu0QH-M2DoCF6643Oh56p5lT0xjlWLbjJ4zJ6QGFvMeyLkpjJvJZsSzn1onZv3bn5LmXUMi0Cvh6-GHhZVXGL_3-QUogoPcamMmQ5OBmFIC3VP9dPg-YHg?purpose=inline)
+![Lesson illustration illustration](../images/image-13.png)
 
 ## 1. What will we learn?
 
@@ -17,7 +17,7 @@ In this lesson, we'll:
 
 1. Generate a TF tree diagram.
     
-2. Visualize coordinate frames in RViz2.
+2. Visualize coordinate frames in RViz22.
     
 3. Understand the Fixed Frame setting.
     
@@ -79,11 +79,11 @@ xdg-open frames.pdf
 
 You should see a tree similar to:
 
-![alt text](../images/image-14.png)
+![Lesson illustration illustration](../images/image-14.png)
 
 This is called a TF tree.
 
-## 4. Open RViz2
+## 4. Open RViz22
 
 Open Terminal 3:
 
@@ -91,11 +91,11 @@ Open Terminal 3:
 rviz2
 ```
 
-RViz2 should open with a 3D visualization window.
+RViz22 should open with a 3D visualization window.
 
-[RViz User Guide — ROS 2 documentation documentation](https://images.openai.com/static-rsc-4/YpHdwdmz0Hysgt-FAZxsLxieFwRh5pfRIf6JJziEZC9K7ZzmjqtX77XKNS8xd6ZVOCbWyrjiS0RgUY6R1REQQI3aaTUPSgZdmh5os98GWRPzUNPf2C3LM7z5jgqgB28Ye_x9dMMCSNTGzqfd-_h63GztmxSjZ5qTRtvq3cfmr0M?purpose=inline)
-![alt text](../images/image-15.png)
-[ros.ncnynl.com](https://ros.ncnynl.com/en/jazzy/Tutorials/Intermediate/RViz/RViz-User-Guide/RViz-User-Guide.html)
+[RViz2 User Guide — ROS 2 documentation documentation](https://images.openai.com/static-rsc-4/YpHdwdmz0Hysgt-FAZxsLxieFwRh5pfRIf6JJziEZC9K7ZzmjqtX77XKNS8xd6ZVOCbWyrjiS0RgUY6R1REQQI3aaTUPSgZdmh5os98GWRPzUNPf2C3LM7z5jgqgB28Ye_x9dMMCSNTGzqfd-_h63GztmxSjZ5qTRtvq3cfmr0M?purpose=inline)
+![Lesson illustration illustration](../images/image-15.png)
+[ros.ncnynl.com](https://ros.ncnynl.com/en/jazzy/Tutorials/Intermediate/RViz2/RViz2-User-Guide/RViz2-User-Guide.html)
 
 If the command is not found, install it:
 
@@ -106,7 +106,7 @@ sudo apt install ros-jazzy-rviz2
 
 ## 5. Configure the Fixed Frame
 
-In RViz2, look at the left-side Displays panel.
+In RViz22, look at the left-side Displays panel.
 
 Find:
 
@@ -133,7 +133,7 @@ Therefore, `odom` is the appropriate fixed reference frame for this exercise.
 
 ## 6. Add TF visualization
 
-In RViz2:
+In RViz22:
 
 1. Click Add at the bottom-left.
     
@@ -169,7 +169,7 @@ This means:
     
 - The robot gradually rotates.
     
-- RViz2 receives updated transformations.
+- RViz22 receives updated transformations.
     
 - The `base_link` axes move relative to `odom`.
     

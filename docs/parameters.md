@@ -16,7 +16,7 @@ Instead of hardcoding these values, we can declare them as ROS 2 parameters and 
 ## 1. How parameters work
 
 [How to Use ROS 2 Parameters | Foxglove](https://images.openai.com/static-rsc-4/C1gueF8Nq_qwCwMP-Fd8WlRmiqUsoxb59Jw5cPd1i9syvM2Pc6XgtK6zH6YpgB8VsLVSSkc0OsrvsaRu8wj5Skmqg6sQ9Ha7NhPc76hrv-RPWUwiiT2D3LvFsrZ5thPq7f_eZlBLX4vZH6clEUp3V9sTAfHvnk9j6UGcFyqOORM?purpose=inline)
-![alt text](../images/image-4.png)
+![Lesson illustration illustration](../images/image-4.png)
 [foxglove.dev](https://foxglove.dev/blog/how-to-use-ros2-parameters)
 
 For example:
